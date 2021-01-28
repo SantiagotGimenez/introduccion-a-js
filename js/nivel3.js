@@ -125,7 +125,8 @@
 //       Utilizá console.log para ver lo que obtuviste!
 
 
-
+nuestroTitulo = document.querySelector('h1');
+console.log(nuestroTitulo);
 
 
 
@@ -147,6 +148,10 @@
 // TAREA: Obtené todos los elementos <li> de la página en una variable llamada mediaLinks.
 
 
+/*
+mediaLinks = document.querySelectorAll('li');
+console.log(mediaLinks); //me devuelve una especie de Array
+*/
 
 
 
@@ -154,16 +159,21 @@
 // TAREA: Ahora utilizá console.log para ver la cantidad de 
 // elementos li que hay con mediaLinks.length
 
-
-
-
+/*
+elementosMediaLinks = mediaLinks.length;
+console.log('la cantidad de elementos li son ' + elementosMediaLinks);
+*/
 
 
 // TAREA: ¿Te acordás de los bucles del nivel 2? Usando lo que sabés de ellos, realizá iteraciones
 //      sobre cada item de mediaLinks y mostralos en pantalla con console.log
 
 
-
+/*
+for(let i=0;i<mediaLinks.length;i++){
+    console.log(mediaLinks[i].innerText);
+}
+*/
 
 
 
@@ -185,6 +195,7 @@
 // y utilizá console.log para mostrarlo.
 
 
+//console.log(nuestroTitulo.textContent);
 
 
 
@@ -205,8 +216,10 @@
 
 // TAREA: Hagamos un nuevo título! Cambiá el contenido de nuestro 'h1' y ponele lo que quieras.
 
-
-
+/*
+nuestroTitulo.textContent = 'Estoy cambiando esto desde nivel3';
+console.log(nuestroTitulo.textContent);
+*/
 
 
 /*
@@ -218,13 +231,14 @@
     Ejemplo:
 
     const nuestroTwitter = document.querySelector('.twitter');
-    ourTwitter.id = "sorpresa";
+    nuestroTwitter.id = "sorpresa";
 */
 
 // TAREA: Actualizá el valor del atributo 'src' de nuestra etiqueta 'img' a "img/kittens.jpeg".
 
 
-
+nuestraImagen = document.querySelector('img');
+nuestraImagen.src = "img/kittens.jpeg";
 
 
 
@@ -249,7 +263,7 @@
 // Tarea: Obtené cualquier elemento de la página y cambiale algunos estilos.
 
 
-
+//nuestroTitulo.style.background = 'blue';
 
 
 
@@ -272,6 +286,11 @@
     nodoPagina.appendChild(nuevoParrafo);
 */
 
+document.createElement('div');
+document.createTextNode('foobar');
+//existingNode.appendChild(newNode);
+
+
 // Tarea: Todavía seguís teniendo a los gatitos en tu pantalla? A mí me gusta el logo y los gatitos.
 //       Creá una nueva imagen con nuestro logo como fuente, y ponela
 //       en nuestra cabecera.
@@ -279,8 +298,9 @@
 // P.S. También les podés dar estilos al nuevo nodo que creaste.
 
 
-
-
+const nodoImagen = document.createElement('img'); //<img>
+nodoImagen.src = 'img/woman_bw.jpg';
+document.querySelector('header').appendChild(nodoImagen); //
 
 
 ////////////////////////////////////////////////////////////////////////////
@@ -288,3 +308,14 @@
 // Levántate, estira las piernas y celebra tu logro.                      //
 // ¡Creo que esto amerita un festejo!                                     //
 ////////////////////////////////////////////////////////////////////////////
+
+const $botonIngreso = document.querySelector('#ingresar');
+const edadUsuario = document.querySelector('#edad-usuario').value;
+$botonIngreso.onclick = function(){
+    
+    if (edadUsuario >= 18) {
+        alert('Bienvenido al bar');
+    }else{
+        alert('No podés entrar');
+    }
+}
